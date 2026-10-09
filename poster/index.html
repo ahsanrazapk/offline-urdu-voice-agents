@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Offline and Urdu Voice Agents</title>
+<link rel="stylesheet" href="poster.css">
+<style>
+  .poster { --accent: #34D399; --accent2: #2DD4BF; }
+  .stage { position: relative; width: 620px; height: 880px; }
+  .term { position: absolute; left: 0; top: 40px; width: 580px; }
+  .term pre { padding: 24px 28px 28px; font: 500 18px/1.75 'JetBrains Mono'; color: #CDD4E5; white-space: pre; }
+  .term .p { color: var(--accent); }
+  .term .k { color: #7DD3FC; }
+  .term .ok { color: var(--accent); }
+  .term .dim { color: #6B7590; }
+  .cur { display: inline-block; width: 10px; height: 20px; background: var(--accent); vertical-align: -3px; }
+  .urdu-card { position: absolute; right: 0; top: 420px; width: 540px; background: #0F1A24; border-color: color-mix(in srgb, var(--accent) 35%, transparent); }
+  .uc-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px 4px; }
+  .uc-head h3 { font: 600 20px 'Space Grotesk'; }
+  .uc-head .lang { font: 600 22px/1.2 'Noto Nastaliq Urdu'; color: #0A0F1E; background: var(--accent); padding: 2px 14px 10px; border-radius: 10px; }
+  .uc-body { padding: 10px 24px 8px; display: flex; flex-direction: column; gap: 14px; }
+  .ub { max-width: 88%; padding: 6px 18px 14px; border-radius: 18px; font-size: 22px; line-height: 2.1; }
+  .ub.user { align-self: flex-start; background: var(--accent); color: #062A1E; border-bottom-left-radius: 6px; }
+  .ub.bot { align-self: flex-end; background: rgba(255,255,255,.07); border: 1px solid var(--line); border-bottom-right-radius: 6px; }
+  .uc-foot { display: flex; align-items: center; gap: 14px; padding: 12px 24px 22px; }
+  .wave { display: flex; align-items: center; gap: 4px; height: 28px; }
+  .wave i { display: block; width: 4px; border-radius: 2px; background: var(--accent); opacity: .85; }
+  .models { font: 500 14px 'JetBrains Mono'; color: var(--muted); }
+  .cost { position: absolute; left: 6px; top: 300px; padding: 16px 22px; border-radius: 18px; background: #0E1E1A;
+    border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent); display: flex; align-items: center; gap: 14px; }
+  .cost .big { font: 700 40px 'Space Grotesk'; color: var(--accent); }
+  .cost .t { font: 500 15px/1.35 Inter; color: #CDD4E5; }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="grid"></div>
+
+  <div class="left">
+    <div class="eyebrow">Private AI · Python</div>
+    <h1>Offline &amp; <em>Urdu</em><br>Voice Agents</h1>
+    <p class="sub">Voice assistants that run on your own machine with no API bills, plus an agent that listens and speaks in Urdu.</p>
+    <ul class="feats">
+      <li>Fully offline pipeline: faster-whisper, Ollama (Llama 3.2) and Piper</li>
+      <li>No per-minute API costs, and the audio never leaves the device</li>
+      <li>Urdu agent with Whisper speech-to-text and Orpheus Urdu text-to-speech</li>
+    </ul>
+    <div class="chips">
+      <span class="chip hl">Python</span>
+      <span class="chip hl">Ollama</span>
+      <span class="chip">faster-whisper</span>
+      <span class="chip">Llama 3.2</span>
+      <span class="chip">Piper TTS</span>
+      <span class="chip">Whisper</span>
+      <span class="chip">Orpheus Urdu</span>
+      <span class="chip">Qwen 2.5</span>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="stage">
+      <div class="window term glow">
+        <div class="titlebar"><span></span><span></span><span></span><div class="ttl">free_voice_agent — offline</div></div>
+<pre><span class="p">$</span> python main.py
+  <span class="k">STT</span>  faster-whisper <span class="dim">· small · CPU int8</span>
+  <span class="k">LLM</span>  Ollama <span class="dim">·</span> llama3.2:3b
+  <span class="k">TTS</span>  Piper
+<span class="ok">✓</span> all models running on this laptop
+<span class="ok">✓</span> no internet · no API key
+<span class="p">›</span> listening… <span class="cur"></span></pre>
+      </div>
+      <div class="cost glow" style="left:auto; right:-6px; top:262px"><span class="big">$0</span><span class="t">API cost<br>per minute</span></div>
+      <div class="window urdu-card glow">
+        <div class="uc-head"><h3>Urdu Voice Agent</h3><span class="lang">اردو</span></div>
+        <div class="uc-body urdu">
+          <div class="ub user">اسلام آباد کہاں واقع ہے؟</div>
+          <div class="ub bot">اسلام آباد پاکستان کے شمال میں، مارگلہ کی پہاڑیوں کے دامن میں واقع ہے۔</div>
+        </div>
+        <div class="uc-foot">
+          <div class="wave"><i style="height:8px"></i><i style="height:16px"></i><i style="height:24px"></i><i style="height:14px"></i><i style="height:28px"></i><i style="height:18px"></i><i style="height:10px"></i><i style="height:22px"></i><i style="height:12px"></i></div>
+          <div class="models">Whisper → Qwen / Gemma → Orpheus Urdu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
